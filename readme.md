@@ -11,6 +11,7 @@ Compile in Xcode (I used 4.3.2 on Lion - YMMV with other versions).
 
 # Using
 **Files need to be byte swapped if their endianness differs from the host machine. For example, a file containing 0x1234 will be read as 0x3412. (this is true for x86)**
+
 * Load a program with the open button
 * Mash the "Step" button until fun happens
 * Hit the "Reset" button and repeat.
