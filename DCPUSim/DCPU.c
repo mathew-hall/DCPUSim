@@ -13,15 +13,18 @@
 
 #define DBG printf("\nL:%d, %x ",__LINE__,cpu->PC); printf
 
+//decode opcodes & operands:
 #define OPCODE(inst) inst&0xf
 #define VALA(inst) ((inst >> 4) & 0x3f)
 #define VALB(inst) ((inst >> 10) & 0x3f)
 
+//flags for value types:
 #define LITERAL  0x10000
 #define ADDRESS  0x20000
 #define REGISTER 0x40000
 #define OOPS	 0x80000
 
+//take val | flags in int to val in a ushort
 #define VALUE(value) (ushort)(value & 0xFFFF)
 
 #define RA 0x0
@@ -32,7 +35,6 @@
 #define RZ 0x5
 #define RI 0x6
 #define RJ 0x7
-
 #define RSP 0x1b
 #define RPC 0x1c
 #define RO	0x1d
@@ -56,7 +58,10 @@ void reset_regs(DCPU* cpu){
 
 void copy_rom(DCPU* cpu, ushort* data, ushort address, int size){
 	ushort *dest = &(cpu->RAM[address]);
-	
+	//don't overflow if size is too big:
+	if(address + size > RAM_SIZE){
+		size = RAM_SIZE - address;
+	}
 	while(size--){
 		*dest++ = *data++;
 	}
@@ -83,13 +88,6 @@ void dump_state(DCPU* cpu){
 	printf("\n}\n");
 	
 }
-
-void die(const char* str, DCPU* cpu){
-	printf("Error: %s\n",str);
-	dump_state(cpu);
-	exit(-1);
-}
-
 
 //Use a macro to generate each case instead of manually writing them out:
 #define _LUT(regname, reg) case regname: return cpu->reg;
@@ -150,13 +148,13 @@ unsigned int decode_destination(ushort val, DCPU* cpu){
 	switch(val){
 		case 0x18:
 			return cpu->SP++ | ADDRESS;
-			break;
+
 		case 0x19:
-			return cpu->SP | ADDRESS;
-			break;
+			return cpu->SP   | ADDRESS;
+
 		case 0x1a:
 			cpu->SP--;
-			return cpu->SP | ADDRESS;
+			return cpu->SP   | ADDRESS;
 
 		case 0x1b:
 		case 0x1c:
@@ -242,16 +240,17 @@ void step(DCPU* cpu){
 	
 	int next_inst_sz = instruction_size(cpu->RAM[cpu->PC]);
 	
-	bool conditional = false;
-	bool writeback = true;
-	
+	bool is_conditional = false; //Is the instruction a conditional?
+	bool conditional_value = false; //if so, was the condition true or false?
+
+	bool writeback = true;	
 	ushort value;
 	
 	switch(opcode){
 		case 0x0:
 			//non-basic:
-			//6 bit opcode in B
-			switch(operanda){
+			//6 bit opcode in A
+			switch(VALA(instruction)){
 				case 0x01:
 					//JSR
 					writeback = false;
@@ -336,21 +335,32 @@ void step(DCPU* cpu){
 			break;
 		/* Conditionals: */
 		case 0xc:
-			conditional = val_a == val_b;
+			//IFE
+			is_conditional = true;
+			conditional_value = val_a == val_b;
 			break;
 		case 0xd:
-			conditional = val_a != val_b;
+			//IFN
+			is_conditional = true;
+			conditional_value = val_a != val_b;
 			break;
 		case 0xe:
-			conditional = val_a > val_b;
+			//IFG
+			is_conditional = true;
+			conditional_value = val_a > val_b;
 			break;
 		case 0xf:
-			conditional = (val_a & val_b) != 0;
+			//IFB
+			is_conditional = true;
+			conditional_value = (val_a & val_b) != 0;
 			break;
 	}
 	
-	if (conditional) {
-		cpu->PC += next_inst_sz;
+	if (is_conditional) {
+		if(!conditional_value){
+			//skip next instruction if cond == false
+			cpu->PC += next_inst_sz;
+		}
 		writeback = false;
 	}
 	

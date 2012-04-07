@@ -14,6 +14,7 @@
 		40EDEB2B152F86C7004B6385 /* MHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EDEB2A152F86C7004B6385 /* MHAppDelegate.m */; };
 		40EDEB2E152F86C7004B6385 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40EDEB2C152F86C7004B6385 /* MainMenu.xib */; };
 		40EDEB36152F89E2004B6385 /* DCPU.c in Sources */ = {isa = PBXBuildFile; fileRef = 40EDEB35152F89E2004B6385 /* DCPU.c */; };
+		40EDEB3915304E71004B6385 /* MHDCPUWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EDEB3815304E71004B6385 /* MHDCPUWrapper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		40EDEB2D152F86C7004B6385 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		40EDEB34152F887F004B6385 /* DCPU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPU.h; sourceTree = "<group>"; };
 		40EDEB35152F89E2004B6385 /* DCPU.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DCPU.c; sourceTree = "<group>"; };
+		40EDEB3715304E71004B6385 /* MHDCPUWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHDCPUWrapper.h; sourceTree = "<group>"; };
+		40EDEB3815304E71004B6385 /* MHDCPUWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHDCPUWrapper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 				40EDEB29152F86C7004B6385 /* MHAppDelegate.h */,
 				40EDEB2A152F86C7004B6385 /* MHAppDelegate.m */,
 				40EDEB2C152F86C7004B6385 /* MainMenu.xib */,
+				40EDEB3715304E71004B6385 /* MHDCPUWrapper.h */,
+				40EDEB3815304E71004B6385 /* MHDCPUWrapper.m */,
 				40EDEB1E152F86C6004B6385 /* Supporting Files */,
 				40EDEB34152F887F004B6385 /* DCPU.h */,
 				40EDEB35152F89E2004B6385 /* DCPU.c */,
@@ -175,6 +180,7 @@
 				40EDEB24152F86C7004B6385 /* main.m in Sources */,
 				40EDEB2B152F86C7004B6385 /* MHAppDelegate.m in Sources */,
 				40EDEB36152F89E2004B6385 /* DCPU.c in Sources */,
+				40EDEB3915304E71004B6385 /* MHDCPUWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 #ifndef DCPUSim_DCPU_h
 #define DCPUSim_DCPU_h
 typedef unsigned short ushort;
+#define RAM_SIZE 0x10000
 typedef struct _DCPU{
 	ushort A;
 	ushort B;
@@ -23,7 +24,7 @@ typedef struct _DCPU{
 	ushort SP;
 	ushort O;
 	
-	ushort RAM[0x10000];
+	ushort RAM[RAM_SIZE];
 	
 }DCPU;
 
