@@ -13,6 +13,7 @@
 		40EDEB28152F86C7004B6385 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 40EDEB26152F86C7004B6385 /* Credits.rtf */; };
 		40EDEB2B152F86C7004B6385 /* MHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EDEB2A152F86C7004B6385 /* MHAppDelegate.m */; };
 		40EDEB2E152F86C7004B6385 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40EDEB2C152F86C7004B6385 /* MainMenu.xib */; };
+		40EDEB36152F89E2004B6385 /* DCPU.c in Sources */ = {isa = PBXBuildFile; fileRef = 40EDEB35152F89E2004B6385 /* DCPU.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,14 +22,16 @@
 		40EDEB1A152F86C6004B6385 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		40EDEB1B152F86C6004B6385 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		40EDEB1C152F86C6004B6385 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		40EDEB1F152F86C6004B6385 /* DCPUSim-Info.plist */ = {isa = PBXFileReference; path = "DCPUSim-Info.plist"; sourceTree = "<group>"; };
+		40EDEB1F152F86C6004B6385 /* DCPUSim-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DCPUSim-Info.plist"; sourceTree = "<group>"; };
 		40EDEB21152F86C7004B6385 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		40EDEB23152F86C7004B6385 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		40EDEB25152F86C7004B6385 /* DCPUSim-Prefix.pch */ = {isa = PBXFileReference; path = "DCPUSim-Prefix.pch"; sourceTree = "<group>"; };
+		40EDEB25152F86C7004B6385 /* DCPUSim-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DCPUSim-Prefix.pch"; sourceTree = "<group>"; };
 		40EDEB27152F86C7004B6385 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		40EDEB29152F86C7004B6385 /* MHAppDelegate.h */ = {isa = PBXFileReference; path = MHAppDelegate.h; sourceTree = "<group>"; };
+		40EDEB29152F86C7004B6385 /* MHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHAppDelegate.h; sourceTree = "<group>"; };
 		40EDEB2A152F86C7004B6385 /* MHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHAppDelegate.m; sourceTree = "<group>"; };
 		40EDEB2D152F86C7004B6385 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		40EDEB34152F887F004B6385 /* DCPU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPU.h; sourceTree = "<group>"; };
+		40EDEB35152F89E2004B6385 /* DCPU.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DCPU.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 				40EDEB2A152F86C7004B6385 /* MHAppDelegate.m */,
 				40EDEB2C152F86C7004B6385 /* MainMenu.xib */,
 				40EDEB1E152F86C6004B6385 /* Supporting Files */,
+				40EDEB34152F887F004B6385 /* DCPU.h */,
+				40EDEB35152F89E2004B6385 /* DCPU.c */,
 			);
 			path = DCPUSim;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 			files = (
 				40EDEB24152F86C7004B6385 /* main.m in Sources */,
 				40EDEB2B152F86C7004B6385 /* MHAppDelegate.m in Sources */,
+				40EDEB36152F89E2004B6385 /* DCPU.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -3,7 +3,7 @@
 //  DCPUSim
 //
 //  Created by Mathew Hall on 06/04/2012.
-//  Copyright (c) 2012 University of Sheffield. All rights reserved.
+//  Copyright (c) 2012 Mathew Hall. All rights reserved.
 //
 
 #import "MHAppDelegate.h"
