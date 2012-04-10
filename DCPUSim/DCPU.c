@@ -27,17 +27,7 @@
 //take val | flags in int to val in a ushort
 #define VALUE(value) (ushort)(value & 0xFFFF)
 
-#define RA 0x0
-#define RB 0x1
-#define RC 0x2
-#define RX 0x3
-#define RY 0x4
-#define RZ 0x5
-#define RI 0x6
-#define RJ 0x7
-#define RSP 0x1b
-#define RPC 0x1c
-#define RO	0x1d
+
 
 void reset_regs(DCPU* cpu){
 	cpu->A = 0;
@@ -53,7 +43,7 @@ void reset_regs(DCPU* cpu){
 	
 	cpu->PC = 0;
 	cpu->O = 0;
-	cpu->SP = 0xffff;
+	cpu->SP = 0;
 }
 
 void copy_rom(DCPU* cpu, ushort* data, ushort address, int size){

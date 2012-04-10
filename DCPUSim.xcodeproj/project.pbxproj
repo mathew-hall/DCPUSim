@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		404EC8FA15322875001E4F01 /* DCPUAss.c in Sources */ = {isa = PBXBuildFile; fileRef = 404EC8F915322875001E4F01 /* DCPUAss.c */; };
+		40EA9C3F153352AF00E3D7CF /* OperatorLUT.c in Sources */ = {isa = PBXBuildFile; fileRef = 40EA9C3E153352AF00E3D7CF /* OperatorLUT.c */; };
+		40EA9C431533888800E3D7CF /* DCPUAssParser.c in Sources */ = {isa = PBXBuildFile; fileRef = 40EA9C421533888800E3D7CF /* DCPUAssParser.c */; };
+		40EA9C461534BDE200E3D7CF /* Fixup.c in Sources */ = {isa = PBXBuildFile; fileRef = 40EA9C451534BDE200E3D7CF /* Fixup.c */; };
+		40EA9C501534F1DC00E3D7CF /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 40EA9C4F1534F1DC00E3D7CF /* main.c */; };
+		40EA9C521534F1DC00E3D7CF /* AssemblerTests.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40EA9C511534F1DC00E3D7CF /* AssemblerTests.1 */; };
+		40EA9C5A1534F81A00E3D7CF /* DCPU.h in Sources */ = {isa = PBXBuildFile; fileRef = 40EDEB34152F887F004B6385 /* DCPU.h */; };
+		40EA9C5B1534F81A00E3D7CF /* DCPU.c in Sources */ = {isa = PBXBuildFile; fileRef = 40EDEB35152F89E2004B6385 /* DCPU.c */; };
+		40EA9C5C1534F81A00E3D7CF /* OperatorLUT.c in Sources */ = {isa = PBXBuildFile; fileRef = 40EA9C3E153352AF00E3D7CF /* OperatorLUT.c */; };
+		40EA9C5D1534F81A00E3D7CF /* OperatorLUT.h in Sources */ = {isa = PBXBuildFile; fileRef = 40EA9C401533706C00E3D7CF /* OperatorLUT.h */; };
+		40EA9C5E1534F81A00E3D7CF /* DCPUAss.c in Sources */ = {isa = PBXBuildFile; fileRef = 404EC8F915322875001E4F01 /* DCPUAss.c */; };
+		40EA9C5F1534F81A00E3D7CF /* DCPUAss.h in Sources */ = {isa = PBXBuildFile; fileRef = 40EA9C3C15326A0500E3D7CF /* DCPUAss.h */; };
+		40EA9C601534F81A00E3D7CF /* DCPUAssParser.c in Sources */ = {isa = PBXBuildFile; fileRef = 40EA9C421533888800E3D7CF /* DCPUAssParser.c */; };
+		40EA9C611534F81A00E3D7CF /* Fixup.h in Sources */ = {isa = PBXBuildFile; fileRef = 40EA9C441534BDC700E3D7CF /* Fixup.h */; };
+		40EA9C621534F81A00E3D7CF /* Fixup.c in Sources */ = {isa = PBXBuildFile; fileRef = 40EA9C451534BDE200E3D7CF /* Fixup.c */; };
+		40EA9C631534F81A00E3D7CF /* Types.h in Sources */ = {isa = PBXBuildFile; fileRef = 40EA9C471534D2B900E3D7CF /* Types.h */; };
 		40EDEB18152F86C6004B6385 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EDEB17152F86C6004B6385 /* Cocoa.framework */; };
 		40EDEB22152F86C7004B6385 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40EDEB20152F86C7004B6385 /* InfoPlist.strings */; };
 		40EDEB24152F86C7004B6385 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EDEB23152F86C7004B6385 /* main.m */; };
@@ -17,7 +33,31 @@
 		40EDEB3915304E71004B6385 /* MHDCPUWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EDEB3815304E71004B6385 /* MHDCPUWrapper.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		40EA9C4A1534F1DC00E3D7CF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				40EA9C521534F1DC00E3D7CF /* AssemblerTests.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		404EC8F915322875001E4F01 /* DCPUAss.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DCPUAss.c; sourceTree = "<group>"; };
+		40EA9C3C15326A0500E3D7CF /* DCPUAss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPUAss.h; sourceTree = "<group>"; };
+		40EA9C3E153352AF00E3D7CF /* OperatorLUT.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = OperatorLUT.c; sourceTree = "<group>"; };
+		40EA9C401533706C00E3D7CF /* OperatorLUT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperatorLUT.h; sourceTree = "<group>"; };
+		40EA9C421533888800E3D7CF /* DCPUAssParser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = DCPUAssParser.c; sourceTree = "<group>"; };
+		40EA9C441534BDC700E3D7CF /* Fixup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fixup.h; sourceTree = "<group>"; };
+		40EA9C451534BDE200E3D7CF /* Fixup.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Fixup.c; sourceTree = "<group>"; };
+		40EA9C471534D2B900E3D7CF /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
+		40EA9C4C1534F1DC00E3D7CF /* AssemblerTests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AssemblerTests; sourceTree = BUILT_PRODUCTS_DIR; };
+		40EA9C4F1534F1DC00E3D7CF /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		40EA9C511534F1DC00E3D7CF /* AssemblerTests.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = AssemblerTests.1; sourceTree = "<group>"; };
 		40EDEB13152F86C5004B6385 /* DCPUSim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCPUSim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40EDEB17152F86C6004B6385 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		40EDEB1A152F86C6004B6385 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -38,6 +78,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		40EA9C491534F1DC00E3D7CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		40EDEB10152F86C5004B6385 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -49,10 +96,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40EA9C4E1534F1DC00E3D7CF /* AssemblerTests */ = {
+			isa = PBXGroup;
+			children = (
+				40EA9C4F1534F1DC00E3D7CF /* main.c */,
+				40EA9C511534F1DC00E3D7CF /* AssemblerTests.1 */,
+			);
+			path = AssemblerTests;
+			sourceTree = "<group>";
+		};
+		40EA9C571534F37F00E3D7CF /* DCPU */ = {
+			isa = PBXGroup;
+			children = (
+				40EDEB34152F887F004B6385 /* DCPU.h */,
+				40EDEB35152F89E2004B6385 /* DCPU.c */,
+			);
+			name = DCPU;
+			sourceTree = "<group>";
+		};
+		40EA9C581534F39400E3D7CF /* Assembler */ = {
+			isa = PBXGroup;
+			children = (
+				40EA9C3E153352AF00E3D7CF /* OperatorLUT.c */,
+				40EA9C401533706C00E3D7CF /* OperatorLUT.h */,
+				404EC8F915322875001E4F01 /* DCPUAss.c */,
+				40EA9C3C15326A0500E3D7CF /* DCPUAss.h */,
+				40EA9C421533888800E3D7CF /* DCPUAssParser.c */,
+				40EA9C441534BDC700E3D7CF /* Fixup.h */,
+				40EA9C451534BDE200E3D7CF /* Fixup.c */,
+				40EA9C471534D2B900E3D7CF /* Types.h */,
+			);
+			name = Assembler;
+			sourceTree = "<group>";
+		};
+		40EA9C591534F39F00E3D7CF /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				40EDEB29152F86C7004B6385 /* MHAppDelegate.h */,
+				40EDEB2A152F86C7004B6385 /* MHAppDelegate.m */,
+				40EDEB2C152F86C7004B6385 /* MainMenu.xib */,
+				40EDEB3715304E71004B6385 /* MHDCPUWrapper.h */,
+				40EDEB3815304E71004B6385 /* MHDCPUWrapper.m */,
+			);
+			name = GUI;
+			sourceTree = "<group>";
+		};
 		40EDEB08152F86C4004B6385 = {
 			isa = PBXGroup;
 			children = (
 				40EDEB1D152F86C6004B6385 /* DCPUSim */,
+				40EA9C4E1534F1DC00E3D7CF /* AssemblerTests */,
 				40EDEB16152F86C6004B6385 /* Frameworks */,
 				40EDEB14152F86C5004B6385 /* Products */,
 			);
@@ -62,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				40EDEB13152F86C5004B6385 /* DCPUSim.app */,
+				40EA9C4C1534F1DC00E3D7CF /* AssemblerTests */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,14 +182,10 @@
 		40EDEB1D152F86C6004B6385 /* DCPUSim */ = {
 			isa = PBXGroup;
 			children = (
-				40EDEB29152F86C7004B6385 /* MHAppDelegate.h */,
-				40EDEB2A152F86C7004B6385 /* MHAppDelegate.m */,
-				40EDEB2C152F86C7004B6385 /* MainMenu.xib */,
-				40EDEB3715304E71004B6385 /* MHDCPUWrapper.h */,
-				40EDEB3815304E71004B6385 /* MHDCPUWrapper.m */,
+				40EA9C591534F39F00E3D7CF /* GUI */,
+				40EA9C571534F37F00E3D7CF /* DCPU */,
+				40EA9C581534F39400E3D7CF /* Assembler */,
 				40EDEB1E152F86C6004B6385 /* Supporting Files */,
-				40EDEB34152F887F004B6385 /* DCPU.h */,
-				40EDEB35152F89E2004B6385 /* DCPU.c */,
 			);
 			path = DCPUSim;
 			sourceTree = "<group>";
@@ -115,6 +205,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		40EA9C4B1534F1DC00E3D7CF /* AssemblerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40EA9C531534F1DC00E3D7CF /* Build configuration list for PBXNativeTarget "AssemblerTests" */;
+			buildPhases = (
+				40EA9C481534F1DC00E3D7CF /* Sources */,
+				40EA9C491534F1DC00E3D7CF /* Frameworks */,
+				40EA9C4A1534F1DC00E3D7CF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AssemblerTests;
+			productName = AssemblerTests;
+			productReference = 40EA9C4C1534F1DC00E3D7CF /* AssemblerTests */;
+			productType = "com.apple.product-type.tool";
+		};
 		40EDEB12152F86C5004B6385 /* DCPUSim */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 40EDEB31152F86C8004B6385 /* Build configuration list for PBXNativeTarget "DCPUSim" */;
@@ -155,6 +262,7 @@
 			projectRoot = "";
 			targets = (
 				40EDEB12152F86C5004B6385 /* DCPUSim */,
+				40EA9C4B1534F1DC00E3D7CF /* AssemblerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -173,6 +281,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		40EA9C481534F1DC00E3D7CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40EA9C5A1534F81A00E3D7CF /* DCPU.h in Sources */,
+				40EA9C5B1534F81A00E3D7CF /* DCPU.c in Sources */,
+				40EA9C5C1534F81A00E3D7CF /* OperatorLUT.c in Sources */,
+				40EA9C5D1534F81A00E3D7CF /* OperatorLUT.h in Sources */,
+				40EA9C5E1534F81A00E3D7CF /* DCPUAss.c in Sources */,
+				40EA9C5F1534F81A00E3D7CF /* DCPUAss.h in Sources */,
+				40EA9C601534F81A00E3D7CF /* DCPUAssParser.c in Sources */,
+				40EA9C611534F81A00E3D7CF /* Fixup.h in Sources */,
+				40EA9C621534F81A00E3D7CF /* Fixup.c in Sources */,
+				40EA9C631534F81A00E3D7CF /* Types.h in Sources */,
+				40EA9C501534F1DC00E3D7CF /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		40EDEB0F152F86C5004B6385 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -181,6 +307,10 @@
 				40EDEB2B152F86C7004B6385 /* MHAppDelegate.m in Sources */,
 				40EDEB36152F89E2004B6385 /* DCPU.c in Sources */,
 				40EDEB3915304E71004B6385 /* MHDCPUWrapper.m in Sources */,
+				404EC8FA15322875001E4F01 /* DCPUAss.c in Sources */,
+				40EA9C3F153352AF00E3D7CF /* OperatorLUT.c in Sources */,
+				40EA9C431533888800E3D7CF /* DCPUAssParser.c in Sources */,
+				40EA9C461534BDE200E3D7CF /* Fixup.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +344,20 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		40EA9C541534F1DC00E3D7CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		40EA9C551534F1DC00E3D7CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		40EDEB2F152F86C7004B6385 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -286,6 +430,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		40EA9C531534F1DC00E3D7CF /* Build configuration list for PBXNativeTarget "AssemblerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40EA9C541534F1DC00E3D7CF /* Debug */,
+				40EA9C551534F1DC00E3D7CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		40EDEB0D152F86C4004B6385 /* Build configuration list for PBXProject "DCPUSim" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -302,6 +454,7 @@
 				40EDEB33152F86C8004B6385 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

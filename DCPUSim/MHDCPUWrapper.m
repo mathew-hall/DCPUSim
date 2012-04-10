@@ -37,7 +37,10 @@
 	if(tableview == _RAMTableView)
 		return RAM_SIZE/4;
 	if(tableview == _StackTableView){
-		return 0xffff - _cpu->SP;
+//		NSLog(@"SP: %x",_cpu->SP);
+		if(_cpu->SP == 0) return 0;
+//		NSLog(@"returning %d rows for table when SP is %x",1+0xffff - _cpu->SP,_cpu->SP);
+		return 1+0xffff - _cpu->SP;
 	}
 	return 0;
 }
@@ -84,12 +87,12 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 		else if(tableColumn == _ASCIIDumpColumn){
 			return [self ASCIIAtAddress:start];
 		}else{ //address:
-			return [NSString stringWithFormat:@"%05x",start];
+			return [NSString stringWithFormat:@"%04x",start];
 		}
 	}else{
 		//Stack table:
 		//TODO:fix this, spec says push is val -> [--SP] so address needs adjusting.
-		return [NSNumber numberWithUnsignedShort: _cpu->RAM[0xffff - (row + 1)]];
+		return [NSString stringWithFormat:@"0x%04x",_cpu->RAM[0xffff - row]];
 	}
 }
 
@@ -111,6 +114,9 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 					 _cpu->J
 					 ];
 	[_RegisterTextField setStringValue:str];
+	//TODO: do this on-demand rather than every step
+	[_StackTableView reloadData];
+	[_RAMTableView reloadData];
 }
 
 -(void) step

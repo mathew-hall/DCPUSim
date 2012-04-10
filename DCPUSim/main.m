@@ -7,11 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "DCPU.h"
+
 int main(int argc, char *argv[])
 {
-	return NSApplicationMain(argc, (const char **)argv);
-	
-
-	
+	return NSApplicationMain(argc, (const char **)argv);	
 }
