@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AssemblerTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>DCPUSim.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>40EA9C4B1534F1DC00E3D7CF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>40EDEB12152F86C5004B6385</key>
 		<dict>
 			<key>primary</key>
