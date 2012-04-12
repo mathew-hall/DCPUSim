@@ -170,17 +170,17 @@ Operand* parse_operand(const char* operand, int line_number){
 			free(temp);
 		}
 		
-	}if(reg != R_NONE){
-		ret->type |= OP_REGISTER;
-		ret->reg = reg;
-	}else if(parse_literal(operand, ret)){
-		//parse literal handles flags so this is8 just a nop
-	}else if(strcmp(operand,"PEEK") == 0){
+	}if(strcmp(operand,"PEEK") == 0){
 		ret->type = OP_PEEK;
 	}else if(strcmp(operand,"POP")  == 0){
 		ret->type = OP_POP;
 	}else if(strcmp(operand,"PUSH") == 0){
 		ret->type = OP_PUSH;
+	}else if(reg != R_NONE){
+		ret->type |= OP_REGISTER;
+		ret->reg = reg;
+	}else if(parse_literal(operand, ret)){
+		//parse literal handles flags so this is8 just a nop
 	}else{
 		ret->type |= OP_LITERAL | OP_REFERENCE;
 		ret->literal = 0xBEEF;
@@ -210,9 +210,15 @@ Instruction* parse_line(const char* line, int line_number, Fixup_Table* fixups, 
 	ret->operator = opn->code;
 	
 	Operand* opa = parse_operand(operanda, line_number);
-	Operand* opb = parse_operand(operandb, line_number);
+	Operand* opb = NULL;
+
 	
-	if(opn == INST_JSR){
+	if(opn->code == INST_JSR){
+		opb = malloc(sizeof(*opb));
+		if(!opb){
+			printf("Failed to malloc for an operand struct\n");
+			exit(-1);
+		}
 		opb->literal = opa->literal;
 		opb->reg = opa->reg;
 		opb->type = opa->type;
@@ -220,6 +226,8 @@ Instruction* parse_line(const char* line, int line_number, Fixup_Table* fixups, 
 		opa->literal = 0x01; //JSR
 		opa->reg = 0;
 		opa->type = 0;
+	}else{
+		opb = parse_operand(operandb, line_number);
 	}
 	
 	if(*label){

@@ -44,6 +44,26 @@ Expect_Instruction prog[] = {
 	{{INST_SET,{OP_REGISTER,RPC,0x0},{OP_LITERAL,0x0,0x1a}},{0,1,{0xe9c1,0x0,0x0}}}
 };
 
+const char* text[] = {
+	"1 SET A, 0x30",
+	"2	SET [0x1000], 0x20",
+	"3 SUB A, [0x1000] ",
+	"4 IFN A, 0x10",
+	"5 SET PC, 0x1a",
+	"6 SET I, 10",
+	"7 SET A, 0x2000",
+	"8 SET [I+0x2000], [A]",
+	"9 SUB I, 1",
+	"a IFN I, 0",
+	"b SET PC, 0xd",
+	"c SET X, 0x4",
+	"d JSR 0x18",
+	"e SET PC, 0x1a",
+	"f SHL X, 4", //<- failure here
+	"10 SET PC, POP",
+	"11 SET PC, 0x1a"
+};
+
 int compare(Instruction_Bytecode* b1, Instruction_Bytecode* b2, int num){
 	int ret= 0;
 	if(b1->address != b2->address){
@@ -63,6 +83,47 @@ int compare(Instruction_Bytecode* b1, Instruction_Bytecode* b2, int num){
 	return ret;
 }
 
+int compare_operand(Operand* op1, Operand* op2, int num, char op){
+	int count = 0;
+	if(op1->reg != op2->reg){
+		printf("%d%c: Registers differ: %x and %x\n",num,op,op1->reg,op2->reg);
+		count++;
+	}
+	if(op1->literal !=op2->literal){
+		printf("%d%c: Literal values differ: %x and %x\n",num,op,op1->literal,op2->literal);
+		count++;
+	}
+	if(op1->type != op2->type){
+		printf("%d%c: Types differ: %x and %x\n",num,op,op1->type,op2->type);
+		count++;
+	}
+	return count;
+}
+
+int compare_instruction(Instruction* i1, Instruction* i2, int num){
+	int count =0;
+	if(i1->operator != i2->operator){
+		printf("%d Operators differ: %x and %x\n",num, i1->operator, i2->operator);
+		count++;
+	}
+	count += compare_operand(&i1->operanda, &i2->operanda,num,'a');
+	count += compare_operand(&i1->operandb, &i2->operandb,num,'b');
+	
+	return count;
+	
+	
+}
+
+void test_parse(){
+	int fails = 0;
+	int num = sizeof(text)/sizeof(*text);
+	for(int i =0; i<num; i++){
+		Instruction* res = parse_line(text[i], i, new_fixup_table(), new_label_table(), 0);
+		fails += compare_instruction(res, &prog[i].inst,i);
+	}
+	printf("\n%d tests run, %d failures\n",num,fails);
+}
+
 void test_codegen();
 void test_codegen(){
 	int fails = 0;
@@ -77,7 +138,8 @@ void test_codegen(){
 int main(int argc, const char * argv[])
 {
 
-	test_codegen();
+//	test_codegen();
+	test_parse();
 
     return 0;
 }
