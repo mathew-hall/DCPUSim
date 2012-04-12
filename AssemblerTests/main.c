@@ -16,16 +16,10 @@ typedef struct _Expect_Instruction{
 	
 } Expect_Instruction;
 
-/*
-
- 
-
- :testsub      SHL X, 4                 ; 9037
- SET PC, POP              ; 61c1
- 
- ; Hang forever. X should now be 0x40 if everything went right.
- :crash        SET PC, crash            ; 7dc1 001a [*]
- */
+typedef struct _Expect_Parser{
+	char* input;
+	Instruction expect;
+} Expect_Parser;
 
 #define _R(rnum) {OP_REGISTER,rnum,0x0}
 
